@@ -1,24 +1,60 @@
-#include <Servo.h>
 
-Servo servoa;  // create servo object to control a servo
-Servo servob; 
-// twelve servo objects can be created on most boards
+#include <Servo>
 
-int posa = 0;    // variable to store the servo position
-int posb = 0;
+Servo downleftservo;
+
+Servo aservo;
+
+int 9pos = 0;
+int 10pos = 0;
+
+
+
 void setup() {
-  servoa.attach(9);  // attaches the servo on pin 9 to the servo object
-  servob.attach(10);
+  downleftservo.attach(9)
+  aservo.attach(10)
 }
 
+void servoleft() { 
+  for(9pos = 0; 9pos < -40; 9pos += 1)  // goes from 0 degrees to 180 degrees 
+  {                                  // in steps of 1 degree 
+    downleftservo.write(9pos);              // tell servo to go to position in variable 'pos' 
+    delay(15);                       // waits 15ms for the servo to reach the position 
+  } 
+  for(9pos = -40; 9pos>=1; 9pos-=1)     // goes from 180 degrees to 0 degrees 
+  {                                
+    downleftservo.write(9pos);              // tell servo to go to position in variable 'pos' 
+    delay(15);                       // waits 15ms for the servo to reach the position 
+  } 
+}
+
+void servodown() { 
+  for(9pos = 0; 9pos < 40; 9pos += 1)  // goes from 0 degrees to 180 degrees 
+  {                                  // in steps of 1 degree 
+    downleftservo.write(9pos);              // tell servo to go to position in variable 'pos' 
+    delay(15);                       // waits 15ms for the servo to reach the position 
+  } 
+  for(9pos = 40; 9pos>=1; 9pos-=1)     // goes from 180 degrees to 0 degrees 
+  {                                
+    downleftservo.write(9pos);              // tell servo to go to position in variable 'pos' 
+    delay(15);                       // waits 15ms for the servo to reach the position 
+  } 
+}
+
+void servoa() { 
+   int pos;
+  for(10pos = 0; 10pos < 40; 10pos += 1)  // goes from 0 degrees to 180 degrees 
+  {                                  // in steps of 1 degree 
+    aservo.write(10pos);              // tell servo to go to position in variable 'pos' 
+    delay(15);                       // waits 15ms for the servo to reach the position 
+  } 
+  for(10pos = 40; 10pos>=1; 10pos-=1)     // goes from 180 degrees to 0 degrees 
+  {                                
+    aservo.write(10pos);              // tell servo to go to position in variable 'pos' 
+    delay(15);                       // waits 15ms for the servo to reach the position 
+  } 
+}
+void servo
 void loop() {
-  for (posa = 0; posa <= 180; posa += 1) { // goes from 0 degrees to 180 degrees
-    // in steps of 1 degree
-    servoa.write(posa);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
-  }
-  for (posa = 180; posa >= 0; posa -= 1) { // goes from 180 degrees to 0 degrees
-    servoa.write(posa);              // tell servo to go to position in variable 'pos'
-    delay(15);                       // waits 15ms for the servo to reach the position
-  }
+
 }
